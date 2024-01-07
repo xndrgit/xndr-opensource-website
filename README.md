@@ -1,6 +1,7 @@
 ## Goal of this App
 
 Welcome! Are you ready to elevate your commissions? this platform is designed for everyone eager to dive into the world of commissions.
+🎨 | 100% customizable with your brand, colours, socials & text
 
 ![Screenshot 2024-01-07 221835](https://github.com/xndrgit/xndr-opensource-website-commissions-socials-contactme/assets/115892862/efa51af1-aa03-4e62-9ace-c1cd80710349)
 
