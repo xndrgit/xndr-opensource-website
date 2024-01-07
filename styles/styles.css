@@ -1,0 +1,265 @@
+.logoDiv{
+    z-index: 100;
+    height: 30vh;
+    position: absolute;
+    top: 50px;
+    /*top: 0;*/
+    /*background: red;*/
+}
+.logo{
+    /*z-index: 100;*/
+    height: 30vh;
+
+    /*cursor: pointer;*/
+    /*transition: 1s ease-in-out;*/
+}
+.logo:hover{
+    /*transform: rotate(360deg);*/
+}
+
+:root{
+    --color-green:#a0e234;
+}
+.NavBar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    width: min(100vw, 400px);
+    z-index:2;
+}
+
+.NavBar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid var(--color-green);
+    width: 20%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+
+.NavBar:focus-within:not(:has(.NavBar-close:focus))::before {
+    width: 100%;
+    background: var(--color-green);
+    border-radius: 0;
+}
+
+.NavBar:focus-within:not(:has(.NavBar-close:focus)) .NavBar-item {
+    transform: translatey(0);
+}
+
+.NavBar-buttons {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    background: rgba(0,0,0,0);
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: none;
+    transform: translate(-50%, -50%);
+    color: #2efb55;
+    cursor: pointer;
+}
+.NavBar-buttons:hover {
+    text-shadow: 0 0 5px #2efb55;
+}
+
+.NavBar-menu,
+.NavBar-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(0,0,0,0);
+    border: none;
+    color: var(--color-green);
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 2rem;
+    transition: 0.5s;
+}
+
+.NavBar-buttons .NavBar-close {
+    transform: translate(-50%, -50%) scale(0);
+}
+.NavBar-buttons:has(.NavBar-menu:focus) .NavBar-close {
+    transform: translate(-50%, -50%) scale(1);
+    color: #111;
+}
+.NavBar-buttons:has(.NavBar-menu:focus) .NavBar-menu {
+    transform: translate(-50%, -50%) scale(0);
+}
+.NavBar-buttons:has(.NavBar-close:focus) .NavBar-menu {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.NavBar-items {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: #111;
+}
+
+.NavBar-item {
+    width: 20%;
+    text-align: center;
+    padding: 5%;
+    transform: translatey(100%);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.NavBar-close:hover,
+.NavBar-item:hover {
+    text-shadow: 0 0 15px #111;
+}
+
+.NavBar-item:nth-child(2) {
+    margin-right: 20%;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* //the body */
+
+:root {
+    --dark: rgb(20, 20, 20);
+    --yellow: rgb(253, 216, 53);
+    --blue: rgb(98, 0, 234);
+
+    --c1: rgb(3, 7, 18);
+    --c2: rgb(163, 230, 53);
+
+    --left-color: var(--c1);
+    --right-color: var(--c2);
+}
+@font-face {
+    font-family: 'Uzi';
+    src: url('https://raw.githubusercontent.com/vickkie/uzitrake/main/fonts/Uzi-stylish.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'uzi-love';
+    font-style: normal;
+    font-weight: normal;
+    src:url('https://raw.githubusercontent.com/vickkie/uzitrake/main/fonts/uzi-love.woff') format('woff');
+}
+
+body {
+    background-color: var(--dark);
+    margin: 0;
+}
+
+.side {
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    place-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.side .title {
+    text-align: center;
+
+    font-family: "Uzi", sans-serif;
+    font-size: 5vw;
+    font-weight: 800;
+
+    margin-top: 50vh;
+    margin-left: 50vw;
+
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    overflow:hidden;
+}
+
+.side .fancy {
+    font-family: "uzi-love", cursive;
+    font-size: 1em;
+}
+
+#left-side {
+    background-color: var(--left-color);
+    width: 60%;
+    z-index: 2;
+}
+
+#left-side .title {
+    color: white;
+}
+
+#left-side .fancy {
+    color: var(--right-color);
+}
+
+#right-side {
+    background-color: var(--right-color);
+}
+
+#right-side .title {
+    color: var(--dark);
+}
+
+#right-side .fancy {
+    color: white;
+}
+
+/* -- YouTube Link Styles -- */
+
+#source-link {
+    top: 60px;
+}
+
+#source-link > i {
+    color: rgb(94, 106, 210);
+}
+
+#yt-link {
+    top: 10px;
+}
+
+#yt-link > i {
+    color: rgb(239, 83, 80);
+}
+
+.meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 350ms, border-color 350ms;
+    z-index: 10000;
+}
+
+.meta-link:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+.meta-link > i, .meta-link > span {
+    height: 20px;
+    line-height: 20px;
+}
+
+.meta-link > span {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    transition: color 600ms;
+}
+
+
+
